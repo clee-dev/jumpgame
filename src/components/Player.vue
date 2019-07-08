@@ -1,9 +1,9 @@
 <template>
     <div class="player" :style="styleObj">
         <div class="text">
-            X: {{ position.x }}
+            X: {{ realPosition.x }}
             <br/>
-            Y: {{ position.y }}
+            Y: {{ realPosition.y }}
             <br/>
             <br/>
             aX: {{ acceleration.x }}
@@ -14,14 +14,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
     computed: {
         ...mapState({
-            position: state => state.player.position,
+            realPosition: state => state.player.position,
             acceleration: state => state.player.acceleration,
             running: state => state.player.running,
+        }),
+        ...mapGetters({
+            position: 'player/renderPosition'
         }),
         styleObj() {
             return {

@@ -3,6 +3,7 @@ import Vuex from "vuex";
 
 import playerStore from "./stores/player.js";
 import levelStore from "./stores/level.js";
+import cameraStore from "./stores/camera.js";
 
 Vue.use(Vuex);
 
@@ -66,12 +67,14 @@ export default new Vuex.Store({
       dispatch("player/processInput", currentInput);
       dispatch("level/processInput", currentInput);
       dispatch("player/nextFrame");
+      dispatch("camera/nextFrame");
 
       commit("CLEAR_KEYPRESSES");
     }
   },
   modules: {
     player: playerStore,
-    level: levelStore
+    level: levelStore,
+    camera: cameraStore,
   }
 });

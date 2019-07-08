@@ -5,8 +5,16 @@ const levelStore = {
       {
         position: {
           x: 30,
-          y: 80
-        }
+          y: 80,
+        },
+        width: 300,
+      },
+      {
+        position: {
+          x: 300,
+          y: 380
+        },
+        width: 20
       }
     ]
   },

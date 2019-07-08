@@ -1,17 +1,18 @@
 <template>
     <div class="game">
         <Player />
+        <Level />
     </div>
 </template>
 
 <script>
 import Player from "./Player.vue";
-import Platform from "./Platform.vue";
+import Level from './Level.vue';
 
 export default {
     components: {
         Player,
-        Platform
+        Level,
     },
     // keyword to be called automatically by Vue
     // when component is mounted
@@ -31,5 +32,6 @@ export default {
     top: 0;
     left: 0;
     background: cornflowerblue;
+    overflow: hidden;
 }
 </style>

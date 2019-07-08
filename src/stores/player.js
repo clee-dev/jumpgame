@@ -31,7 +31,14 @@ const playerStore = {
       y: 0
     }
   },
-  getters: {},
+  getters: {
+    renderPosition(state, getters, rootState) {
+      return {
+        x: state.position.x,
+        y: state.position.y + rootState.camera.y,
+      };
+    }
+  },
   mutations: {
     SET_ACCEL_Y(state, value) {
       state.acceleration.y = value;
