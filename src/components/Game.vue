@@ -2,6 +2,7 @@
     <div class="game">
         <Player />
         <Level />
+        <div class="counter">{{ secondsAlive }}</div>
     </div>
 </template>
 
@@ -21,6 +22,20 @@ export default {
     mounted() {
         this.$store.dispatch('init');
         this.test();
+        this.startTime = new Date();
+        this.now = this.startTime;
+        window.setInterval(function() {
+            this.now = new Date();
+        }.bind(this), 1000);
+    },
+    data: () => ({
+        startTime: null,
+        now: null,
+    }),
+    computed: {
+        secondsAlive() {
+            return Math.floor((this.now - this.startTime) / 1000);
+        }
     },
     methods: {
         test() {
@@ -65,5 +80,8 @@ function between(min, max) {
     left: 0;
     background: cornflowerblue;
     overflow: hidden;
+}
+.counter {
+    position: absolute;
 }
 </style>
