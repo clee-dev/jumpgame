@@ -1,5 +1,5 @@
 const stats = {
-    SCROLL_INCREMENT: 1,
+    SCROLL_INCREMENT: 15,
 };
 
 const cameraStore = {

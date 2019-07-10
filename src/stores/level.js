@@ -5,7 +5,7 @@ const levelStore = {
       {
         position: {
           x: 30,
-          y: 80,
+          y: 160,
         },
         width: 300,
       },
@@ -14,12 +14,16 @@ const levelStore = {
           x: 300,
           y: 380
         },
-        width: 20
+        width: 200
       }
     ]
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    SET_PLATFORMS(state, value) {
+      state.platforms = value;
+    }
+  },
   actions: {
     processInput({ dispatch }, keyBuffer) {}
   }
