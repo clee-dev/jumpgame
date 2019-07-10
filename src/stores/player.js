@@ -200,7 +200,14 @@ const playerStore = {
 
       commit('UPDATE_POSITION', newPosition);
     },
+    checkBoundary({getters}) {
+      // renderY > wH 
+      if (getters.renderPosition.y > window.innerHeight) {
+        location.reload();
+      }
+    },
     nextFrame({ state, commit, dispatch }) {
+      dispatch("checkBoundary");
       commit("APPLY_GRAVITY");
       commit("APPLY_MOVEMENT");
       dispatch("checkCollision");

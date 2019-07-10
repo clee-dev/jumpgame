@@ -27,7 +27,7 @@ export default {
             const rowGap = 400;
             let platforms = [];
             for (let row = 0; row < 100; row++) {
-                let plats = between(1, 3);
+                let plats = between(2, 4);
                 for (let rowPlat = 0; rowPlat < plats; rowPlat++) {
                     platforms.push({
                         position: {
