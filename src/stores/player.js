@@ -151,10 +151,6 @@ const playerStore = {
       console.log(slope);
       let newPosition = desiredPos; //default
 
-      // if (desiredPos.x === currentPos.x && state.desiredOffset.y <= 0) {
-      //   //rising, don't care about collision
-      // }
-      // else if (state.desiredOffset.y > 0) {
       const platforms = rootState.level.platforms;
       const nearPlats =
         platforms.filter(p => 
